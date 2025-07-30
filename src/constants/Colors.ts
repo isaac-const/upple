@@ -1,0 +1,17 @@
+export const Colors = {
+  background: '#072219',
+  inputBackground: '#243E2E',
+  inputBorder: '#295239',
+  placeholder: '#457967',
+  textPrimary: '#A6FF7C',
+  textAction: '#2DC7FF',
+  textDanger: '#E26E6C',
+  buttonPrimaryBackground: '#A6FF7C',
+  buttonPrimaryBorder: '#69AE49',
+  componentBackground: '#09261C',
+  componentBorder: '#295239',
+  focusBorder: '#294652',
+  dangerBorder: '#744847',
+  white: '#FFFFFF',
+  black: '#000000',
+};
