@@ -116,14 +116,6 @@ O projeto está organizado da seguinte forma:
 |-- package.json
 ```
 
----
-
-### 📜 Licença
-
-Distribuído sob a Licença MIT.
-
----
-
 ### 📬 Contato
 
 isaac-const - [isaaccs.code@gmail.com](mailto:isaaccs.code@gmail.com)
