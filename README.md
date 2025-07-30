@@ -70,7 +70,7 @@ Siga os passos abaixo para configurar e rodar o projeto localmente.
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone [https://github.com/isaac-const/upple.git](https://github.com/isaac-const/upple.git)
+    git clone https://github.com/isaac-const/upple.git
     cd upple
     ```
 2.  **Instale as Dependências:**
