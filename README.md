@@ -81,13 +81,9 @@ Siga os passos abaixo para configurar e rodar o projeto localmente.
     * Crie um arquivo chamado `.env` na raiz do projeto.
     * Copie o conteúdo abaixo para dentro dele e substitua com as suas chaves do Supabase:
       ```
-      EXPO_PUBLIC_SUPABASE_URL=SUA_URL_DO_SUPABASE_AQUI
-      EXPO_PUBLIC_SUPABASE_ANON_KEY=SUA_ANON_KEY_DO_SUPABASE_AQUI
+      inicialmente já configurado(mudarei isso depois da avaliação)
       ```
-4.  **Adicione sua Logo:**
-    * Coloque o arquivo da sua logo em `assets/images/logo.png`.
-
-5.  **Rode o Aplicativo:**
+4.  **Rode o Aplicativo:**
     ```bash
     npx expo start
     ```
