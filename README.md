@@ -77,10 +77,8 @@ Siga os passos abaixo para configurar e rodar o projeto localmente.
     ```bash
     npm install
     ```
-3.  **Configure as Variáveis de Ambiente:**
-    ```bash
-    inicialmente já configurado(mudarei isso depois da avaliação)
-    ```
+3.  **Configure as Variáveis de Ambiente em .env**
+
 4.  **Rode o Aplicativo:**
     ```bash
     npx expo start
