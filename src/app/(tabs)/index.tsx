@@ -75,23 +75,24 @@ export default function HomeScreen() {
     <View style={styles.fullContainer}>
       <ScrollView
         style={styles.container}
-        contentContainerStyle={{ paddingBottom: 100 }} 
+        contentContainerStyle={{ paddingBottom: 130 }} 
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.textPrimary} />}
       >
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>RANKING SEMANAL</Text>
+          <Text style={styles.sectionTitle}>Ranking semanal</Text>
           <View style={styles.rankingContainer}>
             {ranking.map((item, index) => (
               <Link key={item.id} href={`/post/${item.id}`} asChild>
                 <Pressable style={{ flex: 1 }}>
                   
-                  <View style={styles.rankingCard}>
-                    <Text style={styles.rankingPlace}>{index + 1}° Lugar</Text>
+                  <View style={[styles.rankingCard, { paddingTop: 14 + (index === 0 ? 14 : index === 1 ? 6 : 0), paddingBottom: 14 + (index === 0 ? 14 : 0) }]}>
+                    <Text style={styles.rankingPlace}>{index + 1}º LUGAR</Text>
                     <Image 
                       source={item.image_url ? { uri: item.image_url } : require('../../../assets/images/icon.png')}
                       style={styles.rankingImage}
                     />
                     <Text style={styles.rankingName} numberOfLines={1}>{item.name}</Text>
+                    <Text style={styles.rankingVotes}>{item.vote_count} votos</Text>
                   </View>
                 </Pressable>
               </Link>
@@ -100,7 +101,7 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>RECENTES</Text>
+          <Text style={styles.sectionTitle}>Recentes</Text>
           {posts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
@@ -118,71 +119,16 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  fullContainer: {
-    flex: 1,
-    backgroundColor: Colors.background,
-  },
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.background,
-  },
-  container: {
-    flex: 1,
-  },
-  section: {
-    paddingHorizontal: 16,
-    paddingTop: 16,
-  },
-  sectionTitle: {
-    color: Colors.textPrimary,
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    textTransform: 'uppercase',
-  },
-  rankingContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 8,
-  },
-  rankingCard: {
-    backgroundColor: Colors.componentBackground,
-    padding: 12,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: Colors.componentBorder,
-    alignItems: 'center',
-    height: 130, 
-  },
-  rankingPlace: {
-    color: Colors.textPrimary,
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 6, 
-  },
-  rankingImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    marginBottom: 2,
-  },
-  rankingName: {
-    color: Colors.white,
-    fontSize: 14,
-    marginTop: 4,
-  },
-  fab: {
-    position: 'absolute',
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: Colors.buttonPrimaryBackground,
-    justifyContent: 'center',
-    alignItems: 'center',
-    bottom: 30,
-    right: 20,
-    zIndex: 20,
-  },
+  fullContainer: { flex: 1, backgroundColor: Colors.background },
+  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: Colors.background },
+  container: { flex: 1 },
+  section: { paddingHorizontal: 16, paddingTop: 22 },
+  sectionTitle: { color: Colors.placeholder, fontSize: 12, fontWeight: '800', marginBottom: 14, textTransform: 'uppercase', letterSpacing: 2 },
+  rankingContainer: { flexDirection: 'row', justifyContent: 'space-between', gap: 10, alignItems: 'flex-end' },
+  rankingCard: { backgroundColor: Colors.componentBackground, paddingVertical: 14, paddingHorizontal: 10, borderRadius: 22, borderWidth: 1, borderColor: Colors.componentBorder, alignItems: 'center' },
+  rankingPlace: { color: Colors.accent, fontSize: 12, fontWeight: '800', marginBottom: 10, letterSpacing: 1 },
+  rankingImage: { width: 58, height: 58, borderRadius: 18, marginBottom: 8 },
+  rankingName: { color: Colors.white, fontSize: 14, fontWeight: '700', marginTop: 2 },
+  rankingVotes: { color: Colors.placeholder, fontSize: 12, marginTop: 2 },
+  fab: { position: 'absolute', width: 62, height: 62, borderRadius: 22, backgroundColor: Colors.buttonPrimaryBackground, justifyContent: 'center', alignItems: 'center', bottom: 104, right: 20, zIndex: 20, shadowColor: '#b8f27a', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.35, shadowRadius: 20, elevation: 10 },
 });

@@ -115,14 +115,14 @@ const PostCard = ({ post }: PostCardProps) => {
         <View style={styles.statsContainer}>
           <TouchableOpacity style={[styles.stat, userHasVoted && { backgroundColor: Colors.buttonPrimaryBackground }]} onPress={handleVote}>
             <Ionicons name="arrow-up" size={14} color={userHasVoted ? Colors.black : Colors.textPrimary} />
-            <Text style={userHasVoted ? styles.statTextHighlight : styles.statText}>{voteCount} votos</Text>
+            <Text style={userHasVoted ? styles.statTextHighlight : styles.statText}>{voteCount}</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.stat}
             onPress={() => router.push(`/post/${post.id}?scrollTo=comments`)}
           >
             <Ionicons name="chatbubble-ellipses-outline" size={14} color={hasComments ? Colors.textAction : Colors.placeholder} />
-            <Text style={[styles.statText, hasComments && { color: Colors.textAction }]}>{commentCount} comentários</Text>
+            <Text style={[styles.statText, hasComments && { color: Colors.textAction }]}>{commentCount}</Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.reportButton} onPress={handleReport}>
@@ -137,117 +137,29 @@ const PostCard = ({ post }: PostCardProps) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: Colors.componentBackground,
-    borderRadius: 12,
+    borderRadius: 24,
     borderWidth: 1,
     borderColor: Colors.componentBorder,
     marginVertical: 8,
-    padding: 16,
+    padding: 18,
   },
-
-  mainContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-
-  logo: {
-    width: 50,
-    height: 50,
-    borderRadius: 10,
-    marginRight: 12,
-    backgroundColor: Colors.inputBackground,
-  },
-
-  textContainer: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  title: {
-    color: Colors.white,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  author: {
-    color: Colors.placeholder,
-    fontSize: 14,
-  },
-
-  tag: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    marginLeft: 10,
-  },
-  appTag: {
-    backgroundColor: '#3A5944',
-  },
-  softwareTag: {
-    backgroundColor: '#294652',
-  },
-  tagText: {
-    color: Colors.white,
-    fontWeight: 'bold',
-    fontSize: 12,
-    marginLeft: 5,
-  },
-
-  description: {
-    color: Colors.white,
-    fontSize: 15,
-    lineHeight: 22,
-    marginBottom: 16,
-  },
-
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderTopWidth: 1,
-    borderTopColor: Colors.inputBorder,
-    paddingTop: 12,
-  },
-
-  statsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stat: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 6,
-    paddingHorizontal: 10,
-    borderRadius: 8,
-    backgroundColor: Colors.inputBackground,
-  },
-  statText: {
-    color: Colors.placeholder,
-    marginLeft: 6,
-    fontWeight: '600',
-  },
-  statTextHighlight: {
-    color: Colors.black,
-    marginLeft: 6,
-    fontWeight: 'bold',
-  },
-  reportButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: Colors.dangerBorder,
-  },
-  reportText: {
-    color: Colors.textDanger,
-    marginLeft: 6,
-    fontWeight: '600',
-    fontSize: 12,
-  },
+  mainContent: { flexDirection: 'row', alignItems: 'center', marginBottom: 14 },
+  logo: { width: 60, height: 60, borderRadius: 18, marginRight: 14, backgroundColor: Colors.inputBackground },
+  textContainer: { flex: 1, justifyContent: 'center' },
+  title: { color: Colors.white, fontSize: 19, fontWeight: '800', letterSpacing: -0.3 },
+  author: { color: Colors.placeholder, fontSize: 13, marginTop: 2 },
+  tag: { flexDirection: 'row', alignItems: 'center', borderRadius: 999, paddingHorizontal: 11, paddingVertical: 6, marginLeft: 10 },
+  appTag: { backgroundColor: 'rgba(184,242,122,0.14)' },
+  softwareTag: { backgroundColor: 'rgba(165,139,255,0.18)' },
+  tagText: { color: Colors.white, fontWeight: '700', fontSize: 11, marginLeft: 5, letterSpacing: 0.4 },
+  description: { color: '#d9d3ea', fontSize: 15, lineHeight: 22, marginBottom: 16 },
+  footer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderTopWidth: 1, borderTopColor: Colors.componentBorder, paddingTop: 14 },
+  statsContainer: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  stat: { flexDirection: 'row', alignItems: 'center', paddingVertical: 8, paddingHorizontal: 12, borderRadius: 999, backgroundColor: Colors.inputBackground },
+  statText: { color: '#b9b2d3', marginLeft: 6, fontWeight: '700', fontSize: 13 },
+  statTextHighlight: { color: Colors.black, marginLeft: 6, fontWeight: '800', fontSize: 13 },
+  reportButton: { flexDirection: 'row', alignItems: 'center', paddingVertical: 8, paddingHorizontal: 10, borderRadius: 999 },
+  reportText: { color: Colors.textDanger, marginLeft: 5, fontWeight: '600', fontSize: 12, opacity: 0.85 },
 });
-
 
 export default PostCard;
